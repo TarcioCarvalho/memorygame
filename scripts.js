@@ -22,6 +22,16 @@ for (let i = 0; i < cards.length; i++) {
     })
 }
 
+document.querySelector('.reset')
+    .addEventListener('click', () => {
+        cards.forEach(card => card
+            .firstElementChild.classList.remove('active'))
+        counter = 0
+        cardMatch.splice(0, 2)
+        cardIndex.splice(0, 2)
+        return
+    })
+
 function flipCard(card, index) {
     if (card.firstElementChild.classList.contains('active')) {
         return
